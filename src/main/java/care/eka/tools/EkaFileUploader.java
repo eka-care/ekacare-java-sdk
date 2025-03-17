@@ -1,17 +1,14 @@
 package care.eka.tools;
 
 import care.eka.EkaCareClient;
-import care.eka.utils.exceptions.EkaCareError;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import okhttp3.*;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,18 +16,6 @@ import java.util.*;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-/**
- * Upload related errors for Eka File Uploader
- */
-class EkaUploadError extends EkaCareError {
-    public EkaUploadError(String message) {
-        super(message);
-    }
-    
-    public EkaUploadError(String message, Throwable cause) {
-        super(message, cause);
-    }
-}
 
 /**
  * Eka File Uploader SDK
@@ -134,8 +119,8 @@ public class EkaFileUploader {
             // Add file
             multipartBuilder.addFormDataPart(
                 "file", 
-                "data.json", 
-                RequestBody.create(jsonBytes, MediaType.parse("application/json"))
+                "data.json",
+                    okhttp3.RequestBody.create(MediaType.parse("application/json"), jsonBytes)
             );
             
             // Build request
@@ -268,8 +253,7 @@ public class EkaFileUploader {
             // Add file
             multipartBuilder.addFormDataPart(
                 "file", 
-                fileName, 
-                RequestBody.create(file, MediaType.parse(contentType))
+                fileName, okhttp3.RequestBody.create(MediaType.parse(contentType), file)
             );
             
             // Build request

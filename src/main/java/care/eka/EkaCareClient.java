@@ -339,4 +339,12 @@ public class EkaCareClient {
     public Profile getAbdmProfile() {
         return abdmProfile;
     }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
 }

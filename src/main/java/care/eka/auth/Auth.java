@@ -36,7 +36,7 @@ public class Auth {
      * </pre>
      */
     public JsonNode login() throws IOException {
-        Map<String, Object> jsonBody = new HashMap<>();
+        Map<String, String> jsonBody = new HashMap<>();
         jsonBody.put("client_id", client.getClientId());
         jsonBody.put("client_secret", client.getClientSecret());
 
@@ -65,7 +65,7 @@ public class Auth {
      * </pre>
      */
     public JsonNode refreshToken(String refreshToken) throws IOException {
-        Map<String, Object> jsonBody = new HashMap<>();
+        Map<String, String> jsonBody = new HashMap<>();
         jsonBody.put("refresh_token", refreshToken);
 
         return client.request(
