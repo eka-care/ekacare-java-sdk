@@ -1,0 +1,89 @@
+@options
+@packages
+-classpath
+'/Users/pranjalpandit/.m2/repository/com/squareup/okhttp3/okhttp/4.10.0/okhttp-4.10.0.jar:/Users/pranjalpandit/.m2/repository/com/squareup/okio/okio-jvm/3.0.0/okio-jvm-3.0.0.jar:/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.31/kotlin-stdlib-jdk8-1.5.31.jar:/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.5.31/kotlin-stdlib-jdk7-1.5.31.jar:/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.31/kotlin-stdlib-common-1.5.31.jar:/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.jar:/Users/pranjalpandit/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.jar:/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.0/jackson-annotations-2.14.0.jar:/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.0/jackson-core-2.14.0.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/s3/2.20.56/s3-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-xml-protocol/2.20.56/aws-xml-protocol-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-query-protocol/2.20.56/aws-query-protocol-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/protocol-core/2.20.56/protocol-core-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/arns/2.20.56/arns-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/profiles/2.20.56/profiles-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/crt-core/2.20.56/crt-core-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/sdk-core/2.20.56/sdk-core-2.20.56.jar:/Users/pranjalpandit/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/auth/2.20.56/auth-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/http-client-spi/2.20.56/http-client-spi-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/regions/2.20.56/regions-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/annotations/2.20.56/annotations-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/utils/2.20.56/utils-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-core/2.20.56/aws-core-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/metrics-spi/2.20.56/metrics-spi-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/json-utils/2.20.56/json-utils-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.20.56/third-party-jackson-core-2.20.56.jar:/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/endpoints-spi/2.20.56/endpoints-spi-2.20.56.jar:/Users/pranjalpandit/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'/Users/pranjalpandit/work/ekajava-sdk/src/main/java:/Users/pranjalpandit/work/ekajava-sdk/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/pranjalpandit/work/ekajava-sdk/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'EkaCare Java SDK 1.0.0 API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/Users/pranjalpandit/work/ekajava-sdk/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'EkaCare Java SDK 1.0.0 API'
+care.eka.vitals
+care.eka.records
+care.eka.tools
+care.eka.auth
+care.eka.utils.exceptions
+care.eka.utils
+care.eka
+care.eka.abdm
+/Users/pranjalpandit/.m2/repository/com/squareup/okhttp3/okhttp/4.10.0/okhttp-4.10.0.jar = 1665755683795
+/Users/pranjalpandit/.m2/repository/com/squareup/okio/okio-jvm/3.0.0/okio-jvm-3.0.0.jar = 1665755683273
+/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.31/kotlin-stdlib-jdk8-1.5.31.jar = 1665755683238
+/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.5.31/kotlin-stdlib-jdk7-1.5.31.jar = 1665755683552
+/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.31/kotlin-stdlib-common-1.5.31.jar = 1665755683786
+/Users/pranjalpandit/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.jar = 1665755685085
+/Users/pranjalpandit/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar = 1387282242000
+/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.jar = 1667680775000
+/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.0/jackson-annotations-2.14.0.jar = 1667679383000
+/Users/pranjalpandit/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.0/jackson-core-2.14.0.jar = 1667680688000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/s3/2.20.56/s3-2.20.56.jar = 1682712947000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-xml-protocol/2.20.56/aws-xml-protocol-2.20.56.jar = 1682712967000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-query-protocol/2.20.56/aws-query-protocol-2.20.56.jar = 1682712969000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/protocol-core/2.20.56/protocol-core-2.20.56.jar = 1682712988000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/arns/2.20.56/arns-2.20.56.jar = 1682712969000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/profiles/2.20.56/profiles-2.20.56.jar = 1682712973000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/crt-core/2.20.56/crt-core-2.20.56.jar = 1682712934000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/sdk-core/2.20.56/sdk-core-2.20.56.jar = 1682712953000
+/Users/pranjalpandit/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar = 1566550189000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/auth/2.20.56/auth-2.20.56.jar = 1682712968000
+/Users/pranjalpandit/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar = 1556756025000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/http-client-spi/2.20.56/http-client-spi-2.20.56.jar = 1682712887000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/regions/2.20.56/regions-2.20.56.jar = 1682712952000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/annotations/2.20.56/annotations-2.20.56.jar = 1682712961000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/utils/2.20.56/utils-2.20.56.jar = 1682712978000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/aws-core/2.20.56/aws-core-2.20.56.jar = 1682712984000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/metrics-spi/2.20.56/metrics-spi-2.20.56.jar = 1682712912000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/json-utils/2.20.56/json-utils-2.20.56.jar = 1682712924000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.20.56/third-party-jackson-core-2.20.56.jar = 1682712918000
+/Users/pranjalpandit/.m2/repository/software/amazon/awssdk/endpoints-spi/2.20.56/endpoints-spi-2.20.56.jar = 1682712982000
+/Users/pranjalpandit/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar = 1679081818000
+/Users/pranjalpandit/work/ekajava-sdk/src/main/java = 1742222424543
+/Users/pranjalpandit/work/ekajava-sdk/target/generated-sources/annotations = 1742222490547
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/constant-values.html = 1742222491872
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/tag-search-index.js = 1742222491900
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-tree.html = 1742222491893
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/module-search-index.js = 1742222491899
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index.html = 1742222491894
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/package-search-index.js = 1742222491900
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/jquery-ui.overrides.css = 1742222491910
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/serialized-form.html = 1742222491874
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index-all.html = 1742222491905
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allpackages-index.html = 1742222491899
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/member-search-index.js = 1742222491900
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/copy.svg = 1742222491907
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/script.js = 1742222491907
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/stylesheet.css = 1742222491907
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-summary.html = 1742222491905
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/help-doc.html = 1742222491906
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/element-list = 1742222491857
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allclasses-index.html = 1742222491898
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/type-search-index.js = 1742222491900
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/search.js = 1742222491908
