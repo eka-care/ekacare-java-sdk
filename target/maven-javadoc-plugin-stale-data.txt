@@ -19,13 +19,13 @@
 -docencoding
 'UTF-8'
 -doctitle
-'EkaCare Java SDK 1.0.0 API'
+'EkaCare Java SDK 1.0.1 API'
 -linkoffline
 'https://docs.oracle.com/en/java/javase/11/docs/api' '/Users/pranjalpandit/work/ekajava-sdk/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'EkaCare Java SDK 1.0.0 API'
+'EkaCare Java SDK 1.0.1 API'
 care.eka.vitals
 care.eka.records
 care.eka.tools
@@ -66,24 +66,24 @@ care.eka.abdm
 /Users/pranjalpandit/.m2/repository/software/amazon/awssdk/endpoints-spi/2.20.56/endpoints-spi-2.20.56.jar = 1682712982000
 /Users/pranjalpandit/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar = 1679081818000
 /Users/pranjalpandit/work/ekajava-sdk/src/main/java = 1742222424543
-/Users/pranjalpandit/work/ekajava-sdk/target/generated-sources/annotations = 1742222490547
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/constant-values.html = 1742222491872
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/tag-search-index.js = 1742222491900
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-tree.html = 1742222491893
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/module-search-index.js = 1742222491899
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index.html = 1742222491894
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/package-search-index.js = 1742222491900
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/jquery-ui.overrides.css = 1742222491910
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/serialized-form.html = 1742222491874
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index-all.html = 1742222491905
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allpackages-index.html = 1742222491899
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/member-search-index.js = 1742222491900
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/copy.svg = 1742222491907
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/script.js = 1742222491907
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/stylesheet.css = 1742222491907
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-summary.html = 1742222491905
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/help-doc.html = 1742222491906
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/element-list = 1742222491857
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allclasses-index.html = 1742222491898
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/type-search-index.js = 1742222491900
-/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/search.js = 1742222491908
+/Users/pranjalpandit/work/ekajava-sdk/target/generated-sources/annotations = 1742223089936
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/constant-values.html = 1742223091276
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/tag-search-index.js = 1742223091305
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-tree.html = 1742223091298
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/module-search-index.js = 1742223091304
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index.html = 1742223091299
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/package-search-index.js = 1742223091304
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/jquery-ui.overrides.css = 1742223091314
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/serialized-form.html = 1742223091278
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/index-all.html = 1742223091309
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allpackages-index.html = 1742223091304
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/member-search-index.js = 1742223091305
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/copy.svg = 1742223091312
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/script.js = 1742223091312
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/stylesheet.css = 1742223091312
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/overview-summary.html = 1742223091310
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/help-doc.html = 1742223091311
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/element-list = 1742223091261
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/allclasses-index.html = 1742223091304
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/type-search-index.js = 1742223091305
+/Users/pranjalpandit/work/ekajava-sdk/target/apidocs/search.js = 1742223091312

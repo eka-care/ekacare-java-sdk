@@ -10,6 +10,7 @@ import care.eka.vitals.Vitals;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
+import okio.Buffer;
 
 import java.io.IOException;
 import java.util.Map;
@@ -103,6 +104,47 @@ public class EkaCareClient {
         return accessToken;
     }
 
+    private String getCurlCommand(Request request) {
+        StringBuilder curlCommand = new StringBuilder("curl -X ").append(request.method());
+
+        // Add URL
+        curlCommand.append(" '").append(request.url().toString()).append("'");
+
+        // Add headers
+        Headers headers = request.headers();
+        for (int i = 0; i < headers.size(); i++) {
+            String name = headers.name(i);
+            String value = headers.value(i);
+            // Mask sensitive information
+            if (name.equalsIgnoreCase("Authorization")) {
+                value = "Bearer xxxxx"; // Mask token
+            } else if (name.equalsIgnoreCase("client-id") ||
+                    name.toLowerCase().contains("secret") ||
+                    name.toLowerCase().contains("password")) {
+                value = "xxxxx"; // Mask sensitive data
+            }
+            curlCommand.append(" -H '").append(name).append(": ").append(value).append("'");
+        }
+
+        // Add request body
+        RequestBody body = request.body();
+        if (body != null) {
+            try {
+                final Request copy = request.newBuilder().build();
+                final Buffer buffer = new Buffer();
+                if (copy.body() != null) {
+                    copy.body().writeTo(buffer);
+                    String bodyString = buffer.readUtf8();
+                    curlCommand.append(" -d '").append(bodyString).append("'");
+                }
+            } catch (IOException e) {
+                curlCommand.append(" # Could not include body due to: ").append(e.getMessage());
+            }
+        }
+
+        return curlCommand.toString();
+    }
+
     /**
      * Manually set the access token.
      *
@@ -186,9 +228,13 @@ public class EkaCareClient {
         if (clientId != null && !clientId.isEmpty()) {
             requestBuilder.header("client-id", clientId);
         }
-        
+
+        Request request = requestBuilder.build();
+        String curlCommand = getCurlCommand(request);
+        System.out.println(curlCommand);
+
         // Execute the request
-        try (Response response = httpClient.newCall(requestBuilder.build()).execute()) {
+        try (Response response = httpClient.newCall(request).execute()) {
             if (!response.isSuccessful()) {
                 if (response.code() == 401) {
                     throw new EkaCareAuthError("Authentication error: " + response.code() + 
@@ -279,8 +325,10 @@ public class EkaCareClient {
         } else {
             throw new IllegalArgumentException("Only GET is supported for raw requests");
         }
-        
-        try (Response response = httpClient.newCall(requestBuilder.build()).execute()) {
+        Request request = requestBuilder.build();
+        String curlCommand = getCurlCommand(request);
+        System.out.println(curlCommand);
+        try (Response response = httpClient.newCall(request).execute()) {
             if (!response.isSuccessful()) {
                 throw new EkaCareAPIError("API error " + response.code() + ": " + 
                         response.body().string());

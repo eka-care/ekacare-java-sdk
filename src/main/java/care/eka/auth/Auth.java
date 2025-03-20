@@ -36,18 +36,19 @@ public class Auth {
      * </pre>
      */
     public JsonNode login() throws IOException {
-        Map<String, String> jsonBody = new HashMap<>();
-        jsonBody.put("client_id", client.getClientId());
-        jsonBody.put("client_secret", client.getClientSecret());
+        // Add client ID and secret as query parameters
+        Map<String, String> params = new HashMap<>();
+        params.put("client_id", client.getClientId());
+        params.put("client_secret", client.getClientSecret());
 
-        return client.request(
-                "POST",
-                "/connect-auth/v1/account/login",
-                jsonBody,
-                null,
-                null,
-                false
-        );
+        // Also include them in the request body
+        Map<String, Object> body = new HashMap<>();
+        body.put("client_id", client.getClientId());
+        body.put("client_secret", client.getClientSecret());
+
+
+        // Auth not required for login
+        return client.request("POST", "/connect-auth/v1/account/login", params, body, null, false);
     }
 
     /**
@@ -68,11 +69,15 @@ public class Auth {
         Map<String, String> jsonBody = new HashMap<>();
         jsonBody.put("refresh_token", refreshToken);
 
+        // Also include them in the request body
+        Map<String, Object> body = new HashMap<>();
+        body.put("refresh_token", refreshToken);
+
         return client.request(
                 "POST",
                 "/connect-auth/v1/account/refresh",
                 jsonBody,
-                null,
+                body,
                 null,
                 false
         );
