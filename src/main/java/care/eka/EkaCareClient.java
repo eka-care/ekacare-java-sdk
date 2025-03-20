@@ -6,6 +6,7 @@ import care.eka.records.Records;
 import care.eka.tools.EkaFileUploader;
 import care.eka.utils.exceptions.EkaCareAPIError;
 import care.eka.utils.exceptions.EkaCareAuthError;
+import care.eka.v2rx.V2RX;
 import care.eka.vitals.Vitals;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,6 +33,7 @@ public class EkaCareClient {
     private final Auth auth;
     private final Records records;
     private final EkaFileUploader files;
+    private final V2RX v2rx;
     private final Vitals vitals;
     private final Profile abdmProfile;
 
@@ -83,6 +85,7 @@ public class EkaCareClient {
         this.auth = new Auth(this);
         this.records = new Records(this);
         this.files = new EkaFileUploader(this);
+        this.v2rx = new V2RX(this);
         this.vitals = new Vitals(this);
         this.abdmProfile = new Profile(this);
     }
@@ -230,8 +233,8 @@ public class EkaCareClient {
         }
 
         Request request = requestBuilder.build();
-        String curlCommand = getCurlCommand(request);
-        System.out.println(curlCommand);
+        // String curlCommand = getCurlCommand(request);
+        // System.out.println(curlCommand);
 
         // Execute the request
         try (Response response = httpClient.newCall(request).execute()) {
@@ -368,6 +371,15 @@ public class EkaCareClient {
      */
     public EkaFileUploader getFiles() {
         return files;
+    }
+
+    /**
+     * Get the V2RX module.
+     *
+     * @return V2RX module
+     */
+    public V2RX getV2RX() {
+        return v2rx;
     }
 
     /**
