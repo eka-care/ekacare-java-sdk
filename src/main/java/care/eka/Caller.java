@@ -22,19 +22,23 @@ public class Caller {
             EkaCareClient client = new EkaCareClient("EC_174022407354131", "32d471f4-f0b9-4a6e-a4ba-1f22ad1a94c9");
 
             // Example 1: Authentication
-            authenticationExample(client);
+            //authenticationExample(client);
 
             // Example 2: Upload files
-            fileUploadExample(client);
+            //fileUploadExample(client);
 
-            // Example 3: Manage vitals
+
+            // Write Fetcher to call V2RX after webhook is called
+            //fetcherAfterWebhookResponse(client, responseId);
+
+            /*// Example 3: Manage vitals
             vitalsExample(client);
 
             // Example 4: Work with ABDM profile
             profileExample(client);
 
             // Example 5: Manage health records
-            recordsExample(client);
+            recordsExample(client);*/
 
         } catch (Exception e) {
             e.printStackTrace();
