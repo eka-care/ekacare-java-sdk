@@ -15,5 +15,6 @@ care/eka/utils/exceptions/EkaCareAPIError.class
 care/eka/utils/exceptions/EkaCareResourceNotFoundError.class
 care/eka/utils/Constants$ConsentStatus.class
 care/eka/utils/exceptions/EkaCareError.class
+care/eka/v2rx/V2RX.class
 care/eka/utils/exceptions/EkaCareValidationError.class
 care/eka/utils/exceptions/EkaCareAuthError.class
