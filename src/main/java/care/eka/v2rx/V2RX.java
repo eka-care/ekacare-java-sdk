@@ -29,7 +29,7 @@ public class V2RX {
      * System.out.println(sessionStatus.get("status").asText());
      * </pre>
      */
-    public JsonNode fetchSessionStatus(String sessionId) throws IOException {
+    public JsonNode getSessionStatus(String sessionId) throws IOException {
         if (sessionId == null || sessionId.isEmpty()) {
             throw new IllegalArgumentException("Session ID cannot be null or empty");
         }
