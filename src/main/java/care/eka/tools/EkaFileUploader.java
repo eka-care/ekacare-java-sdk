@@ -273,6 +273,7 @@ public class EkaFileUploader {
             
             // Create response
             ObjectNode result = objectMapper.createObjectNode();
+            result.put("status", "success");
             result.put("key", folderPath + fileName);
             result.put("contentType", contentType);
             result.put("size", file.length());
@@ -367,6 +368,7 @@ public class EkaFileUploader {
                 
                 // Create response
                 ObjectNode result = objectMapper.createObjectNode();
+                result.put("status", "success");
                 result.put("key", key);
                 result.put("contentType", contentType);
                 result.put("size", fileSize);
