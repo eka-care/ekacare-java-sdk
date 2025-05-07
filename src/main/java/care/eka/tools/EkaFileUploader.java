@@ -99,6 +99,7 @@ public class EkaFileUploader {
             
             // Add extra data if provided
             if (extraData != null) {
+                data.put("additional_data", extraData);
                 data.putAll(extraData);
             }
             
