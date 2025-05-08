@@ -6,7 +6,7 @@
 
     <groupId>care.eka</groupId>
     <artifactId>ekacare-java-sdk</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>EkaCare Java SDK</name>
