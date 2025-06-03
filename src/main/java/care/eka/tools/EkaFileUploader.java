@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.*;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -24,6 +23,7 @@ import java.util.stream.Collectors;
 public class EkaFileUploader {
     private final EkaCareClient client;
     private final ObjectMapper objectMapper;
+    private JsonNode lastUploadInfo;
     
     /**
      * Create a new EkaFileUploader instance.
@@ -33,6 +33,7 @@ public class EkaFileUploader {
     public EkaFileUploader(EkaCareClient client) {
         this.client = client;
         this.objectMapper = new ObjectMapper();
+        this.lastUploadInfo = null;
     }
     
     /**
@@ -73,7 +74,7 @@ public class EkaFileUploader {
      * @throws IOException If an error occurs during the request
      */
     public JsonNode pushEkascribeJson(List<String> audioFiles, String txnId, 
-                                     Map<String, Object> extraData, JsonNode uploadInfo) throws IOException {
+                                     Map<String, Object> extraData, JsonNode uploadInfo, Map<String, Object> outputFormat) throws IOException {
         try {
             JsonNode s3PostData = uploadInfo.get("uploadData");
             String folderPath = uploadInfo.get("folderPath").asText();
@@ -101,6 +102,10 @@ public class EkaFileUploader {
             if (extraData != null) {
                 data.put("additional_data", extraData);
                 data.putAll(extraData);
+            }
+            // Add output format if provided
+            if (outputFormat != null) {
+                data.put("output_format", outputFormat);
             }
             
             // Convert data to JSON
@@ -169,7 +174,7 @@ public class EkaFileUploader {
      * </pre>
      */
     public List<JsonNode> upload(List<String> filePaths, String txnId, String action, 
-                               Map<String, Object> extraData) throws IOException {
+                               Map<String, Object> extraData, Map<String, Object> outputFormat) throws IOException {
         try {
             List<JsonNode> returnList = new ArrayList<>();
             
@@ -185,6 +190,8 @@ public class EkaFileUploader {
             
             // Get upload location
             JsonNode uploadInfo = getUploadLocation(txnId, action, extraData);
+
+            this.lastUploadInfo = uploadInfo;
             
             // Upload each file
             for (String filePath : filePaths) {
@@ -207,8 +214,8 @@ public class EkaFileUploader {
             }
             
             // Push EkaScribe JSON if action is ekascribe
-            if ("ekascribe".equals(action)) {
-                pushEkascribeJson(filePaths, txnId, extraData, uploadInfo);
+            if ("ekascribe".equals(action) || "ekascribe-v2".equals(action)) {
+                pushEkascribeJson(filePaths, txnId, extraData, uploadInfo, outputFormat);
             }
             
             return returnList;
@@ -453,5 +460,18 @@ public class EkaFileUploader {
         } catch (Exception e) {
             return param; // Fallback to unencoded param
         }
+    }
+
+    /**
+     * Get the last upload information.
+     *
+     * @return Last upload information as JsonNode
+     */
+    public JsonNode getLastUploadInfo() {
+        if (this.lastUploadInfo == null) {
+            return null;
+        }
+        // Return a deep copy to prevent external modification
+        return this.lastUploadInfo.deepCopy();
     }
 }
