@@ -97,6 +97,7 @@ public class EkaFileUploader {
                 .collect(Collectors.toList());
             
             data.put("audio-file", audioFileNames);
+            data.put("transfer", "non-vaded");
             
             // Add extra data if provided
             if (extraData != null) {
