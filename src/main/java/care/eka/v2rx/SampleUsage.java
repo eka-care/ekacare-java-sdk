@@ -22,11 +22,11 @@ public class SampleUsage {
             
             // Collect all audio files in a list
             List<String> audioFiles = new ArrayList<>();
-            audioFiles.add("<full file path>");
+            audioFiles.add("/Users/nehajagadeesh/Desktop/v2rx_ulcer_test.wav");
             // audioFiles.add("file_path2");
 
             // Set your own txn id
-            String txnId = "test-11jun25-03";
+            String txnId = "test-neha-11jun25-05";
 
             // Set the Config for running the V2RX action
             // You can refre to : https://developer.eka.care/api-reference/general-tools/medical/voice/overview
@@ -44,7 +44,7 @@ public class SampleUsage {
 
             // output template ids
             Map<String, Object> templateMap1 = new HashMap<>();
-            templateMap1.put("template_id", "<your template id>");
+            templateMap1.put("template_id", "nic_template");
             templateMap1.put("language_output", "en-IN");
             // set true if you need codified data (if out supports that)
             templateMap1.put("codification_needed", true);
@@ -64,7 +64,7 @@ public class SampleUsage {
             authenticationExample(client);
 
             // Example 2: Upload files
-            fileUploadExample(client, audioFiles, txnId, action, extraData, outputFormat);
+            // fileUploadExample(client, audioFiles, txnId, action, extraData, outputFormat);
 
             // Below step should be done after the webhook is received
 
@@ -107,14 +107,19 @@ public class SampleUsage {
         System.out.println("Json Node: " + response.toPrettyString());
 
         // Print upload results
-        for (JsonNode output : response.get("output")) {
-            System.out.println("template id: " + output.get("template_id"));
-            System.out.println("template name: " + output.get("name"));
-            System.out.println("status: " + output.get("status"));
-            System.out.println("errors: " + output.get("errors"));
-            System.out.println("warnings: " + output.get("warnings"));
-            System.out.println("Value: " + output.get("value"));
-
+        JsonNode outputNode = response.get("output");
+        if (outputNode != null && !outputNode.isNull()) {
+            for (JsonNode output : outputNode) {
+                System.out.println("template id: " + output.get("template_id"));
+                System.out.println("template name: " + output.get("name"));
+                System.out.println("status: " + output.get("status"));
+                System.out.println("errors: " + output.get("errors"));
+                System.out.println("warnings: " + output.get("warnings"));
+                System.out.println("Value: " + output.get("value"));
+            }
+        } else {
+            System.out.println("No output field found in the response or it's null.");
+            System.out.println("Please check the API response structure.");
         }
     }
 

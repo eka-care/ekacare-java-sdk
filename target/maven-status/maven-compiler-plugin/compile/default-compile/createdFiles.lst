@@ -10,6 +10,7 @@ care/eka/tools/EkaUploadError.class
 care/eka/utils/Constants$HealthInformationTypes.class
 care/eka/utils/Constants.class
 care/eka/utils/Constants$DocumentTypes.class
+care/eka/v2rx/V2RX$1.class
 care/eka/tools/EkaFileUploader.class
 care/eka/utils/exceptions/EkaCareAPIError.class
 care/eka/utils/exceptions/EkaCareResourceNotFoundError.class
