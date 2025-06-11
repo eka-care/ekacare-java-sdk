@@ -105,8 +105,6 @@ public class V2RX {
                 payload.put("batch_s3_url", s3Url);
                 payload.set("additional_data", objectMapper.valueToTree(extraData));
                 payload.put("mode", extraData.get("mode") != null ? extraData.get("mode").toString() : null);
-                payload.put("input_language", outputFormat.get("input_language") != null ? 
-                           outputFormat.get("input_language").toString() : null);
                 payload.put("speciality", "speciality");
                 payload.put("Section", "section");
                 if (outputFormat.get("output_template") != null) {
@@ -114,6 +112,14 @@ public class V2RX {
                 }
                 payload.put("transfer", "non-vaded");
                 payload.set("client_generated_files", objectMapper.valueToTree(s3FilePaths));
+                
+                Object inputLanguage = outputFormat.get("input_language");
+                if (inputLanguage != null) {
+                    JsonNode inputLangNode = objectMapper.valueToTree(inputLanguage);
+                    payload.set("input_language", inputLangNode);
+                } else {
+                    payload.putNull("input_language");
+                }
                 
                 // Make POST request to initialize transaction
                 String endpoint = "/voice/api/v2/transaction/init/" + txnId;
