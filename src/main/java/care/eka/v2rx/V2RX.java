@@ -113,6 +113,12 @@ public class V2RX {
                 payload.put("transfer", "non-vaded");
                 payload.set("client_generated_files", objectMapper.valueToTree(s3FilePaths));
                 
+                // Add model_type field from extraData for ekascribe-v2 action
+                Object modelType = extraData.get("model_type");
+                if (modelType != null) {
+                    payload.put("model_type", modelType.toString());
+                }
+                
                 Object inputLanguage = outputFormat.get("input_language");
                 if (inputLanguage != null) {
                     JsonNode inputLangNode = objectMapper.valueToTree(inputLanguage);
